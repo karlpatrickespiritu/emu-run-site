@@ -24,6 +24,13 @@
   <link
       href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
       rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rangeslider.js/2.3.0/rangeslider.min.css">
+
+  <style>
+    .form-group {
+      /*padding-top: 7px;*/
+    }
+  </style>
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -52,16 +59,13 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <a href="index.html">Home</a>
+          <a href="javascript:;">Home</a>
         </li>
         <li>
-          <a href="about.html">About</a>
+          <a href="javascript:;">About</a>
         </li>
         <li>
-          <a href="post.html">Sample Post</a>
-        </li>
-        <li>
-          <a href="contact.html">Contact</a>
+          <a href="javascript:;">Contact</a>
         </li>
       </ul>
     </div>
@@ -100,149 +104,185 @@
         <h2 class="section-heading">Booking Questions</h2>
         <hr>
 
-        <form>
-          <div class="form-inline">
-            <div class="form-group">
-              <label>Tour</label>
-              <input type="text" class="form-control" placeholder="Jane Doe">
-            </div>
-            <div class="form-group">
-              <label>Tour Guide</label>
-              <input type="email" class="form-control" placeholder="jane.doe@example.com">
-            </div>
-            <div class="form-group">
-              <label>Date</label>
-              <input type="email" class="form-control" placeholder="jane.doe@example.com">
-            </div>
-            <br>
-            <br>
-            <div class="form-group">
-              <label>Name</label>
-              <input type="email" class="form-control" placeholder="jane.doe@example.com">
-            </div>
-            <div class="form-group">
-              <label>Phone</label>
-              <input type="email" class="form-control" placeholder="jane.doe@example.com">
-            </div>
-            <div class="form-group">
-              <label>Email</label>
-              <input type="email" class="form-control" placeholder="jane.doe@example.com">
-            </div>
+        <form name="feedback">
+          <div class="form-group">
+            <label>Tour</label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Tour Guide</label>
+            <input type="email" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Date</label>
+            <input type="email" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Name</label>
+            <input type="email" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Phone</label>
+            <input type="email" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="form-control" placeholder="jane.doe@example.com">
           </div>
 
-          <p>Please rate your experience by circling a number o to 10, where 0 = not at all likely and 10 = very likely.
-            Fill out both sides of form.</p>
+          <br>
 
           <div class="form-group">
-            <label for="exampleInputEmail1">1. Where did you hear about Emu Run Experience?</label>
-            <input type="text" class="form-control" id="exampleInputEmail1">
+            <label>1. Where did you hear about Emu Run Experience?</label>
+            <input type="text" class="form-control">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">2. Why did you pick Emu Run Experience over other tour operators?</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" >
+            <label>2. Why did you pick Emu Run Experience over other tour operators?</label>
+            <input type="text" class="form-control">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">3. Was price a big factor i n your decision?</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" >
+            <label>3. Was price a big factor in your decision?</label>
+            <input type="text" class="form-control">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">4. Who did you book through?</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" >
+            <label>4. Who did you book through?</label>
+            <input type="text" class="form-control">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">5. Please rate the service you received while making your booking in terms of knowledge and information</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" >
+            <label>5. Please rate the service you received while making your booking in terms of knowledge and
+              information</label>
+            <input type="range" min="0" max="10" step="1" value="5">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">6. Please rate the service you received while making your booking in terms of standard of service</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" >
+            <label>6. Please rate the service you received while making your booking in terms of standard of
+              service</label>
+            <input type="range" min="0" max="10" step="1" value="5">
           </div>
 
           <h2 class="section-heading">Trip Questions</h2>
           <hr>
           <div class="form-group">
-            <label for="exampleInputPassword1">7. Please rate your overall trip experience</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" >
+            <label>7. Please rate your overall trip experience</label>
+            <input type="range" min="0" max="10" step="1" value="5">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">8. How likely are you to recommend Emu Run Experience to others?</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" >
+            <label>8. How likely are you to recommend Emu Run Experience to others?</label>
+            <input type="range" min="0" max="10" step="1" value="5">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">9. Please rate your tour itenerary</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" >
+            <label>9. Please rate your tour itenerary</label>
+            <input type="range" min="0" max="10" step="1" value="5">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">10. Please rate your tour on value for money</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" >
+            <label>10. Please rate your tour on value for money</label>
+            <input type="range" min="0" max="10" step="1" value="5">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">11. Please rate the opportuni�es you had to learn the culture</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" >
+            <label>11. Please rate the opportunies you had to learn the culture</label>
+            <input type="range" min="0" max="10" step="1" value="5">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">12. Was there any aspect of the tour where you felt your health & safety was compromised?</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" >
+            <label>12. Was there any aspect of the tour where you felt your health & safety was compromised?</label>
+            <div class="form-group">
+              <label>Comments:</label>
+              <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <label>Rating:</label>
+            <input type="range" min="0" max="10" step="1" value="5">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Comments</label>
-            <textarea class="form-control" rows="3"></textarea>
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">13. What was your favourite part of the tour?</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" >
+            <label>13. What was your favourite part of the tour?</label>
+            <input type="range" min="0" max="10" step="1" value="5">
           </div>
 
-          <h2 class="section-heading">Trip Questions</h2>
+          <h2 class="section-heading">Trip Inclusions</h2>
           <hr>
           <div class="form-group">
-            <label for="exampleInputPassword1">14. If applicable, Please rate your campsite and facilities.</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" >
+            <label>14. If applicable, Please rate your campsite and facilities.</label>
+            <div class="form-group">
+              <label>Comments:</label>
+              <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <label>Rating:</label>
+            <input type="range" min="0" max="10" step="1" value="5">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">14. If applicable, Please rate your campsite and facilities.</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" >
+            <label>15. Please give a rating of the transport used.</label>
+            <div class="form-group">
+              <label>Comments:</label>
+              <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <label>Rating:</label>
+            <input type="range" min="0" max="10" step="1" value="5">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Comments</label>
-            <textarea class="form-control" rows="3"></textarea>
+            <label>16. Please rate the activities included in the tour (walks, hikes, etc)</label>
+            <div class="form-group">
+              <label>Comments:</label>
+              <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <label>Rating:</label>
+            <input type="range" min="0" max="10" step="1" value="5">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">15. Please give a rating of the transport used</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" >
+            <label>17. If applicable, Please rate the equipment used on your tour.</label>
+            <div class="form-group">
+              <label>Comments:</label>
+              <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <label>Rating:</label>
+            <input type="range" min="0" max="10" step="1" value="5">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Comments</label>
-            <textarea class="form-control" rows="3"></textarea>
+            <label>18. Please rate your meals included.</label>
+            <div class="form-group">
+              <label>Comments:</label>
+              <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <label>Rating:</label>
+            <input type="range" min="0" max="10" step="1" value="5">
+          </div>
+
+          <h2 class="section-heading">Crew Questions</h2>
+          <hr>
+          <div class="form-group">
+            <label>19. Please rate your Guide's enthusiasm.</label>
+            <input type="range" min="0" max="10" step="1" value="5">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">16. Please rate the activities included in the tour (walks, hikes, etc)</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" >
+            <label>20. Please rate your Guide's approachability.</label>
+            <input type="range" min="0" max="10" step="1" value="5">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Comments</label>
-            <textarea class="form-control" rows="3"></textarea>
+            <label>21. Please rate your Guide's local knowledge.</label>
+            <input type="range" min="0" max="10" step="1" value="5">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">17. If applicable, Please rate the equipment used on your tour.</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" >
+            <label>22. Please rate your Guide's level of organization.</label>
+            <input type="range" min="0" max="10" step="1" value="5">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Comments</label>
-            <textarea class="form-control" rows="3"></textarea>
+            <label>23. Please rate how well your Guide communicated with the group.</label>
+            <input type="range" min="0" max="10" step="1" value="5">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">18. Please rate your meals included.</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" >
+            <label>24. Please rate your Guide's adherence to road safety and their driving ability.</label>
+            <input type="range" min="0" max="10" step="1" value="5">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Comments</label>
-            <textarea class="form-control" rows="3"></textarea>
+            <label>25. Please rate your Guide's sociability within the group.</label>
+            <input type="range" min="0" max="10" step="1" value="5">
           </div>
+          <br>
+          <div class="form-group">
+            <label>Comments on your Guide:</label>
+            <div class="form-group">
+              <textarea class="form-control" rows="3"></textarea>
+            </div>
+          </div>
+
 
         </form>
-
-
       </div>
     </div>
   </div>
@@ -292,6 +332,24 @@
 
 <!-- Bootstrap Core JavaScript -->
 <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rangeslider.js/2.0.5/rangeslider.min.js"></script>
+
+<script>
+  (function ($, window) {
+    $(function () {
+      $('input[type="range"]').rangeslider({
+        polyfill: false
+//        onInit: function () {
+//          this.output = $('<div class="range-output" />').insertAfter(this.$range).html(this.$element.val());
+//        },
+//        onSlide: function (position, value) {
+//          this.output.html(value);
+//        },
+      });
+    })
+  })(jQuery, window)
+</script>
 
 <!-- Contact Form JavaScript -->
 <script src="js/jqBootstrapValidation.js"></script>
