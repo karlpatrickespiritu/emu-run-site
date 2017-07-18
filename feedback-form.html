@@ -26,15 +26,28 @@
       rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rangeslider.js/2.3.0/rangeslider.min.css">
   <link rel="stylesheet" href="vendor/jquery-switch-button/jquery.switchButton.css">
-
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 
   <link href="vendor/typeahead/typeahead.css" rel="stylesheet" type="text/css">
-
+  <link href="vendor/jquery-bar-rating/dist/themes/css-stars.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="vendor/jquery-bar-rating/dist/themes/fontawesome-stars.css">
   <style>
     .switch-button-label {
       font-size: 40px;
       font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     }
+
+    .br-theme-fontawesome-stars .br-widget a {
+      font: normal normal normal 39px/1 FontAwesome;
+      padding-right: 8px;
+    }
+
+    .br-theme-fontawesome-stars .br-widget {
+      height: inherit;
+      text-align: center;
+      padding-top: 15px;
+    }
+
   </style>
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -112,7 +125,6 @@
         <h2 class="section-heading">Booking Questions</h2>
         <hr>
 
-
         <form name="feedback">
           <div class="form-group">
             <label>Tour</label>
@@ -167,7 +179,19 @@
           <div class="form-group">
             <label>6. Please rate the service you received while making your booking in terms of standard of
               service</label>
-            <input type="range" min="0" max="10" step="1" value="5">
+            <select name="star-rating">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+            <!--<input type="range" min="0" max="10" step="1" value="5">-->
           </div>
 
           <h2 class="section-heading">Trip Questions</h2>
@@ -366,6 +390,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/rangeslider.js/2.0.5/rangeslider.min.js"></script>
 <script src="vendor/jquery-switch-button/jquery.switchButton.js"></script>
 <script src="https://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
+<script src="vendor/jquery-bar-rating/dist/jquery.barrating.min.js"></script>
 
 <script>
   (function ($, window) {
@@ -454,6 +479,10 @@
       $formFeedback.find('input[name=tour_guides]').typeahead(typeaheadOptions, {
         name: 'states',
         source: substringMatcher(tourGuides)
+      });
+
+      $('select[name=star-rating]').barrating({
+        theme: 'fontawesome-stars'
       });
 
     })
