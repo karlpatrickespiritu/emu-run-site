@@ -57,7 +57,9 @@
         <span class="sr-only">Toggle navigation</span>
         Menu <i class="fa fa-bars"></i>
       </button>
-      <a class="navbar-brand" href="javascript:;">Emu Run</a>
+      <a class="navbar-brand" href="javascript:;">
+        <img src="img/logo.jpg" alt="" class="img-responsive">
+      </a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -81,7 +83,7 @@
 
 <!-- Page Header -->
 <!-- Set your background image for this header on the line below. -->
-<header class="intro-header" style="background-image: url('img/post-bg.jpg')">
+<header class="intro-header" style="background-image: url('img/background.jpg')">
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -115,11 +117,11 @@
           <div class="form-group">
             <label>Tour</label>
             <br>
-            <input type="text" class="form-control typeahead">
+            <input type="text" name="tour" class="form-control typeahead">
           </div>
           <div class="form-group">
             <label>Tour Guide</label>
-            <input type="email" class="form-control">
+            <input type="email" name="tour_guides" class="form-control typeahead">
           </div>
           <div class="form-group">
             <label>Date</label>
@@ -410,26 +412,49 @@
         };
       };
 
-      var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
-        'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
-        'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
-        'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota',
-        'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
-        'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
-        'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island',
-        'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
-        'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
+      var tours = [
+        '3 Day Uluru Camping Tour',
+        'Overnight Uluru Camping Tour',
+        '2 Day Uluru & Kings Canyon Packages',
+        '1 Day Uluru Tour',
+        '1 Day West MacDonnell Ranges Tour',
+        'Uluru Sunset BBQ',
+        '4 Day / 3 Night Uluru to Uluru Camping',
+        'Alice Springs Backpacker Camping Tour Package',
+        'Alice Springs Motel & Camping Tour',
       ];
 
-      $('.typeahead').typeahead({
-          hint: true,
-          highlight: true,
-          minLength: 1
-        },
-        {
-          name: 'states',
-          source: substringMatcher(states)
-        });
+      var tourGuides = [
+        'Tony',
+        'Peter',
+        'Neil',
+        'Eric (S)',
+        'Matt (S)',
+        'Michael',
+        'Olivia',
+        'Alex',
+        'Nicole',
+        'Clive',
+        'Chloe',
+        'Amy',
+      ];
+
+      var $formFeedback = $('form[name=feedback]'),
+          typeaheadOptions = {
+            hint: true,
+            highlight: true,
+            minLength: 1
+          };
+
+      $formFeedback.find('input[name=tour]').typeahead(typeaheadOptions, {
+        name: 'states',
+        source: substringMatcher(tours)
+      });
+
+      $formFeedback.find('input[name=tour_guides]').typeahead(typeaheadOptions, {
+        name: 'states',
+        source: substringMatcher(tourGuides)
+      });
 
     })
   })(jQuery, window)
