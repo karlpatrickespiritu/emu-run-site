@@ -31,6 +31,7 @@
   <link href="vendor/typeahead/typeahead.css" rel="stylesheet" type="text/css">
   <link href="vendor/jquery-bar-rating/dist/themes/css-stars.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="vendor/jquery-bar-rating/dist/themes/fontawesome-stars.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
   <style>
     .switch-button-label {
       font-size: 40px;
@@ -136,8 +137,8 @@
             <input type="email" name="tour_guides" class="form-control typeahead">
           </div>
           <div class="form-group">
-            <label>Date</label>
-            <input type="date" class="form-control">
+            <label>Date & Time</label>
+            <input type="text" name="date" class="form-control">
           </div>
           <div class="form-group">
 
@@ -620,6 +621,8 @@
 <script src="vendor/jquery-switch-button/jquery.switchButton.js"></script>
 <script src="https://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
 <script src="vendor/jquery-bar-rating/dist/jquery.barrating.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
 
 <script>
   (function ($, window) {
@@ -712,6 +715,10 @@
 
       $('select[name=star-rating]').barrating({
         theme: 'fontawesome-stars'
+      });
+
+      $formFeedback.find('input[name=date]').datetimepicker({
+        defaultDate: "7/7/2017",
       });
 
     })
